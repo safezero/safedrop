@@ -12,9 +12,9 @@ const Gateway = require('../lib/Gateway')
 let users
 let server
 
-const blurb0 = new Uint8Array([1, 2, 3, 4])
-const blurb1 = new Uint8Array([5, 6, 7, 8])
-const blurb2 = new Uint8Array([9])
+const drop0 = new Uint8Array([1, 2, 3, 4])
+const drop1 = new Uint8Array([5, 6, 7, 8])
+const drop2 = new Uint8Array([9])
 
 const plaintext0 = new Uint8Array([10, 11])
 const plaintext1 = new Uint8Array([11, 12, 13])
@@ -41,34 +41,34 @@ describe('safedrop-protocol', () => {
       }
     }))
   })
-  describe('add blurb', () => {
+  describe('add drop', () => {
     it('alice=>alice', () => {
-      return users.alice.client.addBlurb(users.alice.persona, blurb0)
+      return users.alice.client.addDrop(users.alice.persona, drop0)
     })
     it('alice=>bob', () => {
-      return users.alice.client.addBlurb(users.bob.persona, blurb1)
+      return users.alice.client.addDrop(users.bob.persona, drop1)
     })
     it('alice=>charlie', () => {
-      return users.alice.client.addBlurb(users.charlie.persona, blurb2)
+      return users.alice.client.addDrop(users.charlie.persona, drop2)
     })
   })
-  describe('getBlurbs', () => {
+  describe('getDrops', () => {
     it('alice', () => {
-      return users.alice.client.getBlurbs().then((blurbs) => {
-        blurbs.length.should.equal(1)
-        blurbs[0].should.deep.equal(blurb0)
+      return users.alice.client.getDrops().then((drops) => {
+        drops.length.should.equal(1)
+        drops[0].should.deep.equal(drop0)
       })
     })
     it('bob', () => {
-      return users.bob.client.getBlurbs().then((blurbs) => {
-        blurbs.length.should.equal(1)
-        blurbs[0].should.deep.equal(blurb1)
+      return users.bob.client.getDrops().then((drops) => {
+        drops.length.should.equal(1)
+        drops[0].should.deep.equal(drop1)
       })
     })
     it('charlie', () => {
-      return users.charlie.client.getBlurbs().then((blurbs) => {
-        blurbs.length.should.equal(1)
-        blurbs[0].should.deep.equal(blurb2)
+      return users.charlie.client.getDrops().then((drops) => {
+        drops.length.should.equal(1)
+        drops[0].should.deep.equal(drop2)
       })
     })
   })
