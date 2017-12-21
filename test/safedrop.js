@@ -152,7 +152,6 @@ function generateUser() {
     }
   })
   const persona = new Persona(identityPublicKey, gateway)
-  persona.getEncoding()
   const client = new Client(identityKeypair, memoryRootKey, gateway)
   return {
     server,
