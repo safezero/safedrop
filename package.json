@@ -20,7 +20,7 @@
     "bluebird": "^3.5.1",
     "bn.js": "^4.11.8",
     "defunction": "^4.0.4",
-    "hendricks": "^1.1.1",
+    "hendricks": "^1.2.1",
     "intcoder": "0.0.3",
     "level": "^2.0.1",
     "level-promise": "^2.1.1",
