@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --bail --timeout 10000"
+    "test": "mocha --bail --timeout 20000"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "level": "^2.0.1",
     "level-promise": "^2.1.1",
     "promise-waterfall": "^0.1.0",
+    "safedrop-websocket-client": "git+https://github.com/safezero/safedrop-websocket-client.git",
     "secp256k1": "^3.3.1",
     "ws": "^3.3.2"
   },
