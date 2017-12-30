@@ -139,7 +139,7 @@ let port = 9000
 let difficulty = 16
 
 function generateUser() {
-  const server = new Server(difficulty)
+  const server = new Server(difficulty, './db/')
   server.listen(port)
   const identityKeypair = Keypair.generate()
   const identityPublicKey = identityKeypair.publicKey
